@@ -33,7 +33,8 @@ public class MysqlConnection {
 			PreparedStatement ps = conn.prepareStatement("select * from cars");
 			ResultSet respuesta = ps.executeQuery();
 			while (respuesta.next()) {
-				list.add(new Auto(respuesta.getInt(1), respuesta.getString(2), respuesta.getString(3)));
+				list.add(new Auto(respuesta.getInt(1), respuesta.getString(2), respuesta.getString(3),
+					respuesta.getString(4)));
 			}
 		} catch (Exception e) {
 		}
